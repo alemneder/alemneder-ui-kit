@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../utils/hex_color.dart';
 
@@ -56,11 +57,11 @@ class ThemeStyles {
             color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
           ),
           headline5: fontStyle.copyWith(
-            color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
-          ),
+              color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
+              fontWeight: FontWeight.bold),
           headline6: fontStyle.copyWith(
-            color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
-          ),
+              color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
+              fontWeight: FontWeight.bold),
         )
         .apply(bodyColor: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT)),
     cardColor: HexColor(AppHexColors.DARK_THEME_LAYER),
@@ -115,11 +116,11 @@ class ThemeStyles {
             color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),
           ),
           headline5: fontStyle.copyWith(
-            color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),
-          ),
+              color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),
+              fontWeight: FontWeight.bold),
           headline6: fontStyle.copyWith(
-            color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),
-          ),
+              color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),
+              fontWeight: FontWeight.bold),
         )
         .apply(bodyColor: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT)),
     cardColor: HexColor(AppHexColors.LIGHT_THEME_LAYER),
@@ -127,11 +128,3 @@ class ThemeStyles {
     dialogBackgroundColor: HexColor(AppHexColors.LIGHT_THEME_LAYER),
   );
 }
-
-
-
-
-
-
-
-

@@ -33,7 +33,7 @@ class _BaseScreenState extends State<BaseScreen> {
     _themeManager = Provider.of<ThemeManager>(context);
     return Scaffold(
       body: Stack(
-        alignment: Alignment.topCenter,
+        alignment: Alignment.bottomCenter,
         children: [
           PageView(
             controller: _pageController,
