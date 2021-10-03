@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PostStyleThree extends StatefulWidget {
-  final String id;
+  final int id;
   final String? asset;
   final String title;
   final String? content;
   final String? userPhoto;
   final String username;
-  final String likeCount;
-  final String unlikeCount;
-  final String commentCount;
+  final int likeCount;
+  final int unlikeCount;
+  final int commentCount;
   final Function()? onLike;
   final Function()? onDislike;
   final Function()? onComment;

@@ -18,36 +18,36 @@ class _HomeScreenState extends State<HomeScreen> {
         scrollDirection: Axis.vertical,
         children: [
           PostStyleOne(
-              id: '',
+              id: 0,
               asset: 'https://wallpapercave.com/wp/wp2089665.jpg',
               userPhoto:
                   'https://thumbs.dreamstime.com/b/smart-person-eyewear-man-official-clothes-stands-against-white-background-studio-165962936.jpg',
               username: 'Buğra Saltuk',
-              likeCount: '2,3 Mn',
-              unlikeCount: '2,9 B',
-              commentCount: '8.4 B',
+              likeCount: 2303,
+              unlikeCount: 2990,
+              commentCount: 8458,
               title: 'Yeni aracım sizce nasıl?',
               content: 'Yorumlarınızı bekliyorum bir hayırlı olsun alırım :)'),
           PostStyleTwo(
-              id: '',
+              id: 2,
               asset:
                   'https://blog.walls.io/wp-content/uploads/2020/09/Death-to-Stock-Elevate-and-Represent.jpg',
               userPhoto:
                   'https://thumbs.dreamstime.com/b/copyspace-photo-brown-excited-ecstatic-cheerful-cute-charming-nice-girlfriend-black-blogger-wearing-jeans-denim-copyspace-photo-158760219.jpg',
               username: 'Toprak Eylül',
-              likeCount: '72,3 B',
-              unlikeCount: '898',
-              commentCount: '2,2 B',
+              likeCount: 73817,
+              unlikeCount: 898,
+              commentCount: 2291,
               title: 'Yeni Art Çalışmam',
               content: 'Bunu sizce sayfalarımda paylaşayım mı?'),
           PostStyleThree(
-              id: '',
+              id: 3,
               userPhoto:
                   'https://i.pinimg.com/originals/50/ac/3f/50ac3fd6a1c5e8ab2cfdd924fd92ec52.jpg',
               username: 'Büşra Sancar',
-              likeCount: '7,7 Mn',
-              unlikeCount: '13 B',
-              commentCount: '98 B',
+              likeCount: 7865,
+              unlikeCount: 135,
+              commentCount: 337,
               title: 'Saçlarımın Yeni Hali',
               content: 'Saçlarım nasıl olmuş?'),
         ],

@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PostStyleOne extends StatefulWidget {
-  final String id;
+  final int id;
   final String? asset;
   final String title;
   final String? content;
   final String? userPhoto;
   final String username;
-  final String likeCount;
-  final String unlikeCount;
-  final String commentCount;
+  final int likeCount;
+  final int unlikeCount;
+  final int commentCount;
   final Function()? onLike;
   final Function()? onDislike;
   final Function()? onComment;
@@ -89,7 +89,7 @@ class _PostStyleOneState extends State<PostStyleOne> {
                       children: [
                         const Icon(FontAwesomeIcons.thumbsUp),
                         Text(
-                          widget.likeCount,
+                          widget.likeCount.toString(),
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 12,
@@ -123,7 +123,7 @@ class _PostStyleOneState extends State<PostStyleOne> {
                       children: [
                         const Icon(FontAwesomeIcons.comment),
                         Text(
-                          widget.commentCount,
+                          widget.commentCount.toString(),
                           style: const TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 12,
