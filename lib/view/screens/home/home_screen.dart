@@ -18,7 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
         scrollDirection: Axis.vertical,
         children: [
           PostStyleOne(
-              postURL: 'https://wallpapercave.com/wp/wp2089665.jpg',
+              id: '',
+              asset: 'https://wallpapercave.com/wp/wp2089665.jpg',
               userPhoto:
                   'https://thumbs.dreamstime.com/b/smart-person-eyewear-man-official-clothes-stands-against-white-background-studio-165962936.jpg',
               username: 'Buğra Saltuk',
@@ -26,8 +27,7 @@ class _HomeScreenState extends State<HomeScreen> {
               unlikeCount: '2,9 B',
               commentCount: '8.4 B',
               title: 'Yeni aracım sizce nasıl?',
-              description:
-                  'Yorumlarınızı bekliyorum bir hayırlı olsun alırım :)'),
+              content: 'Yorumlarınızı bekliyorum bir hayırlı olsun alırım :)'),
           PostStyleTwo(
               postURL:
                   'https://blog.walls.io/wp-content/uploads/2020/09/Death-to-Stock-Elevate-and-Represent.jpg',
