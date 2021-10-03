@@ -17,6 +17,8 @@ class PostStyleTwo extends StatefulWidget {
   final Function()? onLike;
   final Function()? onDislike;
   final Function()? onComment;
+  final Function()? onShare;
+  final Function()? onOptions;
 
   const PostStyleTwo(
       {Key? key,
@@ -32,6 +34,8 @@ class PostStyleTwo extends StatefulWidget {
       required this.commentCount,
       this.onLike,
       this.onDislike,
+      this.onOptions,
+      this.onShare,
       this.onComment})
       : super(key: key);
 
@@ -147,7 +151,7 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                                 FontAwesomeIcons.thumbsUp,
                                 color: widget.voteType == PostVoteType.Like
                                     ? Colors.orange
-                                    : Colors.white,
+                                    : Colors.black,
                               ),
                             ),
                             Text(
@@ -165,14 +169,14 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                           spacing: 4.0,
                           runSpacing: 4.0,
                           crossAxisAlignment: WrapCrossAlignment.center,
-                          children:  [
+                          children: [
                             InkWell(
                               onTap: widget.onDislike,
                               child: Icon(
                                 FontAwesomeIcons.thumbsDown,
                                 color: widget.voteType == PostVoteType.Dislike
                                     ? Colors.orange
-                                    : Colors.white,
+                                    : Colors.black,
                               ),
                             ),
                             Text(
@@ -191,7 +195,10 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                           runSpacing: 4.0,
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            const Icon(FontAwesomeIcons.comment),
+                            InkWell(
+                              onTap: widget.onComment,
+                              child: const Icon(FontAwesomeIcons.comment),
+                            ),
                             Text(
                               widget.commentCount.toString(),
                               style: const TextStyle(
@@ -207,8 +214,11 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                           spacing: 4.0,
                           runSpacing: 4.0,
                           crossAxisAlignment: WrapCrossAlignment.center,
-                          children: const [
-                            Icon(FontAwesomeIcons.share),
+                          children: [
+                            InkWell(
+                              onTap: widget.onShare,
+                              child: Icon(FontAwesomeIcons.share),
+                            ),
                             Text(
                               'Paylaş',
                               style: TextStyle(
@@ -224,8 +234,11 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                           spacing: 4.0,
                           runSpacing: 4.0,
                           crossAxisAlignment: WrapCrossAlignment.center,
-                          children: const [
-                            Icon(FontAwesomeIcons.ellipsisV),
+                          children: [
+                            InkWell(
+                              onTap: widget.onOptions,
+                              child: Icon(FontAwesomeIcons.ellipsisV),
+                            ),
                           ],
                         ),
                         const SizedBox(width: 24.0),

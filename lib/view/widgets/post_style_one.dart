@@ -17,6 +17,8 @@ class PostStyleOne extends StatefulWidget {
   final Function()? onLike;
   final Function()? onDislike;
   final Function()? onComment;
+  final Function()? onShare;
+  final Function()? onOptions;
 
   const PostStyleOne(
       {Key? key,
@@ -32,6 +34,8 @@ class PostStyleOne extends StatefulWidget {
       required this.commentCount,
       this.onLike,
       this.onDislike,
+      this.onOptions,
+      this.onShare,
       this.onComment})
       : super(key: key);
 
@@ -98,7 +102,7 @@ class _PostStyleOneState extends State<PostStyleOne> {
                             FontAwesomeIcons.thumbsUp,
                             color: widget.voteType == PostVoteType.Like
                                 ? Colors.orange
-                                : Colors.white,
+                                : Colors.black,
                           ),
                         ),
                         Text(
@@ -123,7 +127,7 @@ class _PostStyleOneState extends State<PostStyleOne> {
                             FontAwesomeIcons.thumbsDown,
                             color: widget.voteType == PostVoteType.Dislike
                                 ? Colors.orange
-                                : Colors.white,
+                                : Colors.black,
                           ),
                         ),
                         Text(
@@ -142,7 +146,10 @@ class _PostStyleOneState extends State<PostStyleOne> {
                       runSpacing: 4.0,
                       crossAxisAlignment: WrapCrossAlignment.center,
                       children: [
-                        const Icon(FontAwesomeIcons.comment),
+                        InkWell(
+                          onTap: widget.onComment,
+                          child: const Icon(FontAwesomeIcons.comment),
+                        ),
                         Text(
                           widget.commentCount.toString(),
                           style: const TextStyle(
@@ -158,8 +165,11 @@ class _PostStyleOneState extends State<PostStyleOne> {
                       spacing: 4.0,
                       runSpacing: 4.0,
                       crossAxisAlignment: WrapCrossAlignment.center,
-                      children: const [
-                        Icon(FontAwesomeIcons.share),
+                      children: [
+                        InkWell(
+                          onTap: widget.onShare,
+                          child: Icon(FontAwesomeIcons.share),
+                        ),
                         Text(
                           'Paylaş',
                           style: TextStyle(
@@ -175,8 +185,11 @@ class _PostStyleOneState extends State<PostStyleOne> {
                       spacing: 4.0,
                       runSpacing: 4.0,
                       crossAxisAlignment: WrapCrossAlignment.center,
-                      children: const [
-                        Icon(FontAwesomeIcons.ellipsisV),
+                      children: [
+                        InkWell(
+                          onTap: widget.onOptions,
+                          child: Icon(FontAwesomeIcons.ellipsisV),
+                        ),
                       ],
                     ),
                   ],
