@@ -29,7 +29,8 @@ class _HomeScreenState extends State<HomeScreen> {
               title: 'Yeni aracım sizce nasıl?',
               content: 'Yorumlarınızı bekliyorum bir hayırlı olsun alırım :)'),
           PostStyleTwo(
-              postURL:
+              id: '',
+              asset:
                   'https://blog.walls.io/wp-content/uploads/2020/09/Death-to-Stock-Elevate-and-Represent.jpg',
               userPhoto:
                   'https://thumbs.dreamstime.com/b/copyspace-photo-brown-excited-ecstatic-cheerful-cute-charming-nice-girlfriend-black-blogger-wearing-jeans-denim-copyspace-photo-158760219.jpg',
@@ -38,10 +39,9 @@ class _HomeScreenState extends State<HomeScreen> {
               unlikeCount: '898',
               commentCount: '2,2 B',
               title: 'Yeni Art Çalışmam',
-              description: 'Bunu sizce sayfalarımda paylaşayım mı?'),
+              content: 'Bunu sizce sayfalarımda paylaşayım mı?'),
           PostStyleThree(
-              postURL:
-                  'https://i.pinimg.com/originals/95/ed/e8/95ede8611cec4ea37e59fe5c8dcd16fe.jpg',
+              id: '',
               userPhoto:
                   'https://i.pinimg.com/originals/50/ac/3f/50ac3fd6a1c5e8ab2cfdd924fd92ec52.jpg',
               username: 'Büşra Sancar',
@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen> {
               unlikeCount: '13 B',
               commentCount: '98 B',
               title: 'Saçlarımın Yeni Hali',
-              description: 'Saçlarım nasıl olmuş?'),
+              content: 'Saçlarım nasıl olmuş?'),
         ],
       ),
     );

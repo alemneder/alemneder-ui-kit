@@ -1,11 +1,13 @@
+import 'package:alemneder_ui_kit/view/utils/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class PostStyleOne extends StatefulWidget {
-  final String postURL;
+  final String id;
+  final String? asset;
   final String title;
-  final String description;
-  final String userPhoto;
+  final String? content;
+  final String? userPhoto;
   final String username;
   final String likeCount;
   final String unlikeCount;
@@ -16,10 +18,11 @@ class PostStyleOne extends StatefulWidget {
 
   const PostStyleOne(
       {Key? key,
-      required this.postURL,
+      required this.id,
+      this.asset,
       required this.title,
-      required this.description,
-      required this.userPhoto,
+      this.content,
+      this.userPhoto,
       required this.username,
       required this.likeCount,
       required this.unlikeCount,
@@ -38,8 +41,21 @@ class _PostStyleOneState extends State<PostStyleOne> {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.network(widget.postURL,
-            width: double.infinity, height: double.infinity, fit: BoxFit.cover),
+        widget.asset != null
+            ? Image.network(widget.asset!,
+                width: double.infinity,
+                height: double.infinity,
+                fit: BoxFit.cover)
+            : Container(                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.topLeft,
+                    end: Alignment.bottomRight,
+                    colors: [
+                      HexColor('#C04848'),
+                      HexColor('#480048'),
+                    ],
+                  ),
+                ),),
         Container(
           decoration: BoxDecoration(
               gradient: LinearGradient(colors: [
@@ -166,7 +182,7 @@ class _PostStyleOneState extends State<PostStyleOne> {
                         fontSize: 18),
                   ),
                   Text(
-                    widget.description,
+                    widget.content ?? '',
                     style: const TextStyle(color: Colors.white, fontSize: 12),
                   ),
                   const SizedBox(
@@ -178,10 +194,12 @@ class _PostStyleOneState extends State<PostStyleOne> {
                     runSpacing: 8.0,
                     crossAxisAlignment: WrapCrossAlignment.center,
                     children: [
-                      CircleAvatar(
-                        backgroundImage: NetworkImage(widget.userPhoto),
-                        radius: 15,
-                      ),
+                      widget.userPhoto != null
+                          ? CircleAvatar(
+                              backgroundImage: NetworkImage(widget.userPhoto!),
+                              radius: 15,
+                            )
+                          : Container(),
                       Text(
                         widget.username,
                         style: const TextStyle(
