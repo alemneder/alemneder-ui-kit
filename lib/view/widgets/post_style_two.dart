@@ -1,3 +1,4 @@
+import 'package:alemneder_ui_kit/core/utils/enums.dart';
 import 'package:alemneder_ui_kit/view/utils/hex_color.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -5,13 +6,14 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class PostStyleTwo extends StatefulWidget {
   final int id;
   final String? asset;
-  final String title;
+  final String? title;
   final String? content;
   final String? userPhoto;
   final String username;
   final int likeCount;
   final int unlikeCount;
   final int commentCount;
+  final PostVoteType voteType;
   final Function()? onLike;
   final Function()? onDislike;
   final Function()? onComment;
@@ -24,6 +26,7 @@ class PostStyleTwo extends StatefulWidget {
       this.content,
       required this.userPhoto,
       required this.username,
+      required this.voteType,
       required this.likeCount,
       required this.unlikeCount,
       required this.commentCount,
@@ -104,7 +107,7 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                       height: 8.0,
                     ),
                     Text(
-                      widget.title,
+                      widget.title ?? '',
                       style: const TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.bold,
@@ -138,7 +141,15 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                           runSpacing: 4.0,
                           crossAxisAlignment: WrapCrossAlignment.center,
                           children: [
-                            const Icon(FontAwesomeIcons.thumbsUp),
+                            InkWell(
+                              onTap: widget.onLike,
+                              child: Icon(
+                                FontAwesomeIcons.thumbsUp,
+                                color: widget.voteType == PostVoteType.Like
+                                    ? Colors.orange
+                                    : Colors.white,
+                              ),
+                            ),
                             Text(
                               widget.likeCount.toString(),
                               style: const TextStyle(
@@ -154,8 +165,16 @@ class _PostStyleTwoState extends State<PostStyleTwo> {
                           spacing: 4.0,
                           runSpacing: 4.0,
                           crossAxisAlignment: WrapCrossAlignment.center,
-                          children: const [
-                            Icon(FontAwesomeIcons.thumbsDown),
+                          children:  [
+                            InkWell(
+                              onTap: widget.onDislike,
+                              child: Icon(
+                                FontAwesomeIcons.thumbsDown,
+                                color: widget.voteType == PostVoteType.Dislike
+                                    ? Colors.orange
+                                    : Colors.white,
+                              ),
+                            ),
                             Text(
                               'Beğenme',
                               style: TextStyle(

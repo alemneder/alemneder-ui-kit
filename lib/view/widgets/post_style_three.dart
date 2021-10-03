@@ -5,7 +5,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class PostStyleThree extends StatefulWidget {
   final int id;
   final String? asset;
-  final String title;
+  final String? title;
   final String? content;
   final String? userPhoto;
   final String username;
@@ -20,7 +20,7 @@ class PostStyleThree extends StatefulWidget {
       {Key? key,
       required this.id,
       this.asset,
-      required this.title,
+      this.title,
       this.content,
       this.userPhoto,
       required this.username,
@@ -203,7 +203,7 @@ class _PostStyleThreeState extends State<PostStyleThree> {
                         height: 8.0,
                       ),
                       Text(
-                        widget.title,
+                        widget.title ?? '',
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

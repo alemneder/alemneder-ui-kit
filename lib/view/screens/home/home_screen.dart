@@ -1,3 +1,4 @@
+import 'package:alemneder_ui_kit/core/utils/enums.dart';
 import 'package:alemneder_ui_kit/view/widgets/post_style_one.dart';
 import 'package:alemneder_ui_kit/view/widgets/post_style_three.dart';
 import 'package:alemneder_ui_kit/view/widgets/post_style_two.dart';
@@ -23,6 +24,7 @@ class _HomeScreenState extends State<HomeScreen> {
               userPhoto:
                   'https://thumbs.dreamstime.com/b/smart-person-eyewear-man-official-clothes-stands-against-white-background-studio-165962936.jpg',
               username: 'Buğra Saltuk',
+              voteType: PostVoteType.Idle,
               likeCount: 2303,
               unlikeCount: 2990,
               commentCount: 8458,
@@ -35,6 +37,7 @@ class _HomeScreenState extends State<HomeScreen> {
               userPhoto:
                   'https://thumbs.dreamstime.com/b/copyspace-photo-brown-excited-ecstatic-cheerful-cute-charming-nice-girlfriend-black-blogger-wearing-jeans-denim-copyspace-photo-158760219.jpg',
               username: 'Toprak Eylül',
+              voteType: PostVoteType.Idle,
               likeCount: 73817,
               unlikeCount: 898,
               commentCount: 2291,
