@@ -2,6 +2,7 @@ import 'package:alemneder_ui_kit/core/utils/enums.dart';
 import 'package:alemneder_ui_kit/view/widgets/post_style_one.dart';
 import 'package:alemneder_ui_kit/view/widgets/post_style_three.dart';
 import 'package:alemneder_ui_kit/view/widgets/post_style_two.dart';
+import 'package:alemneder_ui_kit/view/widgets/survey_style.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  int? selectedVote;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,6 +55,23 @@ class _HomeScreenState extends State<HomeScreen> {
               commentCount: 337,
               title: 'Saçlarımın Yeni Hali',
               content: 'Saçlarım nasıl olmuş?'),
+          SurveyStyle(
+            id: 4,
+            userPhoto:
+                'https://i.pinimg.com/originals/50/ac/3f/50ac3fd6a1c5e8ab2cfdd924fd92ec52.jpg',
+            username: 'Büşra Sancar',
+            title: 'Saçlarımın Yeni Hali',
+            content: 'Saçlarım nasıl olmuş?',
+            options: ['Berbat','Çok Hojdır','Maşallah','Bu nedir ya'],
+            optionsCount: [80,15,0,5],
+            voteCount: 100,
+            votedOption: selectedVote,
+            onVoted: (vote){
+              setState(() {
+                selectedVote = vote;
+              });
+            },
+          ),
         ],
       ),
     );

@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_platform_widgets: ^1.9.5
+  flutter_screenutil: ^5.0.0+2
   font_awesome_flutter: ^9.1.0
   get_it: ^7.2.0
   google_fonts: ^2.1.0

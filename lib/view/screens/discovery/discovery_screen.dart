@@ -24,6 +24,11 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
             SizedBox(
               height: WidgetConstants.DEFAULT_TITLE_SPACING,
             ),
+            Column(
+              children: [
+                
+              ],
+            ),
           ],
         ),
       ),
