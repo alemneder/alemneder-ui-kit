@@ -80,7 +80,7 @@ class _SurveyStyleState extends State<SurveyStyle> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start, 
                   children: [
                     Wrap(
                       direction: Axis.horizontal,

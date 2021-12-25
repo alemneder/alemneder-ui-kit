@@ -7,8 +7,8 @@ import 'app_colors.dart';
 
 class ThemeStyles {
   // fontStyle.copyWith
-  static final TextStyle fontStyle = GoogleFonts.carroisGothic();
-  static final TextTheme fontTheme = GoogleFonts.carroisGothicTextTheme();
+  static final TextStyle fontStyle = GoogleFonts.roboto();
+  static final TextTheme fontTheme = GoogleFonts.robotoTextTheme();
 
   // DARK THEME
 
@@ -18,6 +18,8 @@ class ThemeStyles {
     primaryColor: HexColor(AppHexColors.PRIMARY_COLOR),
     focusColor: HexColor(AppHexColors.PRIMARY_COLOR),
     indicatorColor: HexColor(AppHexColors.PRIMARY_COLOR),
+        bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: HexColor(AppHexColors.DARK_THEME_LABEL)),
     textSelectionTheme: TextSelectionThemeData(
         cursorColor: HexColor(AppHexColors.PRIMARY_COLOR)),
     appBarTheme: AppBarTheme(
@@ -55,6 +57,7 @@ class ThemeStyles {
           ),
           headline4: fontStyle.copyWith(
             color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
+            fontWeight: FontWeight.bold
           ),
           headline5: fontStyle.copyWith(
               color: HexColor(AppHexColors.DARK_THEME_TITLE_TEXT),
@@ -76,6 +79,8 @@ class ThemeStyles {
     primaryColor: HexColor(AppHexColors.PRIMARY_COLOR),
     focusColor: HexColor(AppHexColors.PRIMARY_COLOR),
     indicatorColor: HexColor(AppHexColors.PRIMARY_COLOR),
+    bottomSheetTheme: BottomSheetThemeData(
+        backgroundColor: HexColor(AppHexColors.LIGHT_THEME_LAYER)),
     textSelectionTheme: TextSelectionThemeData(
         cursorColor: HexColor(AppHexColors.PRIMARY_COLOR)),
     shadowColor: HexColor(AppHexColors.LIGHT_THEME_LABEL),
@@ -114,6 +119,7 @@ class ThemeStyles {
           ),
           headline4: fontStyle.copyWith(
             color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),
+            fontWeight: FontWeight.bold
           ),
           headline5: fontStyle.copyWith(
               color: HexColor(AppHexColors.LIGHT_THEME_TITLE_TEXT),

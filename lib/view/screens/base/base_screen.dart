@@ -1,6 +1,7 @@
 import 'package:alemneder_ui_kit/view/screens/discovery/discovery_screen.dart';
 import 'package:alemneder_ui_kit/view/screens/home/home_screen.dart';
 import 'package:alemneder_ui_kit/view/screens/messages/messages_screen.dart';
+import 'package:alemneder_ui_kit/view/screens/notification/notification_screen.dart';
 import 'package:alemneder_ui_kit/view/screens/profile/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -41,7 +42,7 @@ class _BaseScreenState extends State<BaseScreen> {
             children: [
               HomeScreen(),
               DiscoveryScreen(),
-              MessagesScreen(),
+              NotificationScreen(),
               ProfileScreen()
             ],
           ),
@@ -50,7 +51,7 @@ class _BaseScreenState extends State<BaseScreen> {
               padding: const EdgeInsets.all(16.0),
               child: AnimatedOpacity(
                 duration: Duration(milliseconds: 150),
-                opacity: _selectedPage != 0 ? 1.0 : 0.0,
+                opacity: _selectedPage != 0 && _selectedPage != 3 ? 1.0 : 0.0,
                 child: Card(
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
@@ -95,7 +96,7 @@ class _BaseScreenState extends State<BaseScreen> {
           _selectPage(2);
         },
         icon: Icon(
-          FontAwesomeIcons.comment,
+          FontAwesomeIcons.bell,
           color: _selectedPage == 2 ? Colors.orange : Colors.grey[600],
         ),
       ),
